@@ -1,0 +1,426 @@
+[
+    {
+        "id": 17060,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1420,
+        "name_kr": "F2A 버팔로(타치대)",
+        "name": "F2A Buffalo (Thach Squadron)"
+    },
+    {
+        "id": 17260,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1534,
+        "name_kr": "F4U 콜세어 (VF-17 졸리로저스)",
+        "name": "F4U (VF-17 \"Pirate\" Squad)"
+    },
+    {
+        "id": 17340,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1639,
+        "name_kr": "F6F 헬캣",
+        "name": "F6F Hellcat"
+    },
+    {
+        "id": 17360,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1626,
+        "name_kr": "F7F 타이거캣",
+        "name": "F7F Tigercat"
+    },
+    {
+        "id": 17380,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1450,
+        "name_kr": "F8F 베어캣",
+        "name": "F8F Bearcat"
+    },
+    {
+        "id": 17420,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1654,
+        "name_kr": "시제형 XF5U 플라잉 팬케이크",
+        "name": "Prototype XF5U \"Flying Flapjack\""
+    },
+    {
+        "id": 17440,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1601,
+        "name_kr": "F6F 헬캣(HVAR 탑재형)",
+        "name": "F6F Hellcat (HVAR-Mounted)"
+    },
+    {
+        "id": 18060,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1810,
+        "name_kr": "TBD데버스테이터(VT-8중대)",
+        "name": "TBD Devastator (VT-8 Squadron)"
+    },
+    {
+        "id": 18180,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1810,
+        "name_kr": "TBM 어벤져(VT-18중대)",
+        "name": "TBM Avenger (VT-18 Squadron)"
+    },
+    {
+        "id": 18220,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1830,
+        "name_kr": "XTB2D-1 스카이파이렛",
+        "name": "XTB2D-1 Skypirate"
+    },
+    {
+        "id": 19060,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1760,
+        "name_kr": "SBD 돈틀리스 (맥클러스키대)",
+        "name": "SBD Dauntless (McClusky Division)"
+    },
+    {
+        "id": 19160,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1790,
+        "name_kr": "실험형XSB3C-1",
+        "name": "Experimental XSB3C-1"
+    },
+    {
+        "id": 19240,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1760,
+        "name_kr": "BTD-1 디스트로이어",
+        "name": "BTD-1 Destroyer"
+    },
+    {
+        "id": 19300,
+        "rarity": 6,
+        "type": 9,
+        "reload": 1984,
+        "name_kr": "AD-1 스카이레이더",
+        "name": "AD-1 Skyraider"
+    },
+    {
+        "id": 27060,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1596,
+        "name_kr": "시파이어 FR.47",
+        "name": "Seafire FR.47"
+    },
+    {
+        "id": 27140,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1594,
+        "name_kr": "시팽",
+        "name": "Seafang"
+    },
+    {
+        "id": 27300,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1596,
+        "name_kr": "시 퓨리",
+        "name": "Sea Fury"
+    },
+    {
+        "id": 27320,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1596,
+        "name_kr": "시 호넷",
+        "name": "Sea Hornet"
+    },
+    {
+        "id": 28060,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1650,
+        "name_kr": "소드피쉬 (818중대)",
+        "name": "Swordfish (818 Squad)"
+    },
+    {
+        "id": 28140,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1550,
+        "name_kr": "바라쿠다",
+        "name": "Barracuda"
+    },
+    {
+        "id": 28200,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1750,
+        "name_kr": "파이어브랜드",
+        "name": "Blackburn Firebrand"
+    },
+    {
+        "id": 28220,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1580,
+        "name_kr": "파이어크레스트",
+        "name": "Firecrest"
+    },
+    {
+        "id": 28400,
+        "rarity": 6,
+        "type": 8,
+        "reload": 1750,
+        "name_kr": "와이번",
+        "name": "Wyvern"
+    },
+    {
+        "id": 28420,
+        "rarity": 6,
+        "type": 8,
+        "reload": 1609,
+        "name_kr": "시제형 스피어피쉬",
+        "name": "Prototype Spearfish"
+    },
+    {
+        "id": 29200,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1670,
+        "name_kr": "파이어플라이",
+        "name": "Firefly"
+    },
+    {
+        "id": 29220,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1624,
+        "name_kr": "페어리 파이어플라이(1771중대)",
+        "name": "Fairey Firefly (1771 NAS)"
+    },
+    {
+        "id": 29300,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1560,
+        "name_kr": "바라쿠다(831중대)",
+        "name": "Barracuda (831 Squadron)"
+    },
+    {
+        "id": 37240,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1432,
+        "name_kr": "제로센 52형",
+        "name": "Type 0 Fighter Model 52"
+    },
+    {
+        "id": 37340,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1570,
+        "name_kr": "렛푸",
+        "name": "A7M Reppuu"
+    },
+    {
+        "id": 37400,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1610,
+        "name_kr": "시덴改二",
+        "name": "Kawanishi N1K3-A Shiden Kai 2"
+    },
+    {
+        "id": 37460,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1534,
+        "name_kr": "시제형 시덴改四",
+        "name": "Kawanishi N1K3-A Shiden Kai 4"
+    },
+    {
+        "id": 38240,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1710,
+        "name_kr": "류세이",
+        "name": "Aichi B7A Ryusei"
+    },
+    {
+        "id": 38260,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1710,
+        "name_kr": "류세이·改",
+        "name": "Ryusei Kai"
+    },
+    {
+        "id": 38300,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1594,
+        "name_kr": "시제형 사이운",
+        "name": "Prototype Saiun Kai"
+    },
+    {
+        "id": 39140,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1570,
+        "name_kr": "스이세이",
+        "name": "Suisei"
+    },
+    {
+        "id": 39160,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1500,
+        "name_kr": "스이세이 12형A",
+        "name": "Suisei Model 12A"
+    },
+    {
+        "id": 39340,
+        "rarity": 6,
+        "type": 9,
+        "reload": 1804,
+        "name_kr": "시제 함재형 텐라이",
+        "name": "Prototype Tenrai"
+    },
+    {
+        "id": 47140,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1390,
+        "name_kr": "Me-155A 함상전투기",
+        "name": "Messerschmitt Me-155A"
+    },
+    {
+        "id": 47160,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1591,
+        "name_kr": "시제 함재형 BF-109G",
+        "name": "Prototype BF-109G"
+    },
+    {
+        "id": 47180,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1669,
+        "name_kr": "시제형 FW-190 A-6/R6 (함재기형)",
+        "name": "Prototype FW-190 A-6/R6 (Carrier-Based)"
+    },
+    {
+        "id": 47200,
+        "rarity": 5,
+        "type": 7,
+        "reload": 1458,
+        "name_kr": "시제형 함상식 FW-190 G-3/R1",
+        "name": "Prototype Carrier-Based FW-190 G-3/R1"
+    },
+    {
+        "id": 48040,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1680,
+        "name_kr": "Ju-87 D-4",
+        "name": "Ju-87 D-4"
+    },
+    {
+        "id": 85540,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1805,
+        "name_kr": "시제 함재형 Su-2",
+        "name": "Prototype Su-2"
+    },
+    {
+        "id": 85560,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1880,
+        "name_kr": "시제형 VIT-2(VK-107)",
+        "name": "Prototype VIT-2 (VK-107)"
+    },
+    {
+        "id": 85600,
+        "rarity": 6,
+        "type": 7,
+        "reload": 1759,
+        "name_kr": "시제형 함상식 La-9",
+        "name": "Prototype Carrier-Based La-9"
+    },
+    {
+        "id": 85620,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1744,
+        "name_kr": "시제형 VIT-2(모드 체인지)",
+        "name": "Prototype VIT-2 (Mode Change)"
+    },
+    {
+        "id": 91240,
+        "rarity": 5,
+        "type": 8,
+        "reload": 1504,
+        "name_kr": "BR.810",
+        "name": "Bréguet BR.810"
+    },
+    {
+        "id": 91340,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1624,
+        "name_kr": "LN.401",
+        "name": "LN.401"
+    },
+    {
+        "id": 19140,
+        "rarity": 4,
+        "type": 9,
+        "reload": 2062,
+        "name_kr": "SB2C 헬다이버",
+        "name": "SB2C Helldiver"
+    },
+    {
+        "id": 29140,
+        "rarity": 4,
+        "type": 9,
+        "reload": 1380,
+        "name_kr": "풀머",
+        "name": "Fulmar"
+    },
+    {
+        "id": 1440,
+        "rarity": 5,
+        "type": 10,
+        "reload_percent": 0,
+        "name_kr": "유압식 캐터펄트",
+        "name": "Steam Catapult"
+    },
+    {
+        "id": 680,
+        "rarity": 4,
+        "type": 10,
+        "reload_percent": -4,
+        "name_kr": "호밍 비컨",
+        "name": "Homing Beacon"
+    },
+    {
+        "id": 3940,
+        "rarity": 4,
+        "type": 10,
+        "reload_percent": 4,
+        "name_kr": "정예 항공 정비 만쥬",
+        "name": "Elite Aviation Maintenance Manjuu"
+    }
+]

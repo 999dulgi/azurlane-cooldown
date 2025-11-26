@@ -1,0 +1,1784 @@
+[
+    {
+        "name": "Glorious META",
+        "name_kr": "글로리어스(META)",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "2": {
+                "default": 114,
+                "slot": 2,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 330,
+        "enhance_reload": 35
+    },
+    {
+        "name": "Taihou",
+        "name_kr": "다이호",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Ranger",
+        "name_kr": "레인저",
+        "rarity": 2,
+        "equipment": {
+            "1": {
+                "default": 110,
+                "slot": 1,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 111,
+                "slot": 3,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 333,
+        "enhance_reload": 36,
+        "retrofit": {
+            "id": 107044,
+            "level": 80,
+            "bonus": {
+                "health": 240,
+                "reload": 5,
+                "equipment_proficiency_2": 0.15,
+                "equipment_proficiency_3": 0.15,
+                "aviation": 60,
+                "equipment_proficiency_1": 0.05,
+                "antiair": 35
+            },
+            "skill": 7508,
+            "skin": 107049,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Victorious",
+        "name_kr": "빅토리어스",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 115,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 38,
+        "growth_reload": 266,
+        "enhance_reload": 29
+    },
+    {
+        "name": "Saratoga",
+        "name_kr": "새러토가",
+        "rarity": 4,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 111,
+                "slot": 3,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 41,
+        "growth_reload": 282,
+        "enhance_reload": 30,
+        "retrofit": {
+            "id": 107034,
+            "level": 85,
+            "bonus": {
+                "health": 210,
+                "reload": 20,
+                "equipment_proficiency_1": 0.05,
+                "antiair": 50,
+                "equipment_proficiency_2": 0.1,
+                "equipment_proficiency_3": 0.1,
+                "aviation": 45
+            },
+            "skill": 7412,
+            "skin": 107039,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Shangri-La",
+        "name_kr": "샹그릴라",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.15
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 333,
+        "enhance_reload": 36
+    },
+    {
+        "name": "Centaur",
+        "name_kr": "센토",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 113,
+                "slot": 2,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 59,
+        "growth_reload": 409,
+        "enhance_reload": 44
+    },
+    {
+        "name": "Souryuu",
+        "name_kr": "소류",
+        "rarity": 4,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 45,
+        "growth_reload": 310,
+        "enhance_reload": 33,
+        "retrofit": {
+            "id": 307034,
+            "level": 85,
+            "bonus": {
+                "health": 210,
+                "reload": 20,
+                "equipment_proficiency_1": 0.15,
+                "antiair": 50,
+                "equipment_proficiency_3": 0.05,
+                "aviation": 35,
+                "evasion": 10
+            },
+            "skill": 22612,
+            "skin": 307039,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Shinano",
+        "name_kr": "시나노",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7, 8, 9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 46,
+        "growth_reload": 322,
+        "enhance_reload": 35
+    },
+    {
+        "name": "Shoukaku",
+        "name_kr": "쇼카쿠",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Amagi(CV)",
+        "name_kr": "아마기(항모)",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7, 9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.45
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [8, 9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.45
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.6
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 49,
+        "growth_reload": 344,
+        "enhance_reload": 37
+    },
+    {
+        "name": "Ark Royal META",
+        "name_kr": "아크 로열(META)",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 114,
+                "slot": 1,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.45
+            },
+            "2": {
+                "default": 114,
+                "slot": 2,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "3": {
+                "default": 115,
+                "slot": 3,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 0.8
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 42,
+        "growth_reload": 209,
+        "enhance_reload": 32
+    },
+    {
+        "name": "Ark Royal",
+        "name_kr": "아크 로열",
+        "rarity": 4,
+        "equipment": {
+            "1": {
+                "default": 114,
+                "slot": 1,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 114,
+                "slot": 2,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "3": {
+                "default": 115,
+                "slot": 3,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 0.8
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 43,
+        "growth_reload": 301,
+        "enhance_reload": 32,
+        "retrofit": {
+            "id": 207024,
+            "level": 85,
+            "bonus": {
+                "health": 210,
+                "reload": 15,
+                "equipment_proficiency_3": 0.15,
+                "antiair": 50,
+                "equipment_proficiency_1": 0.03,
+                "equipment_proficiency_2": 0.03,
+                "aviation": 35,
+                "accuracy": 5
+            },
+            "skill": 14412,
+            "skin": 207029,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Albion",
+        "name_kr": "알비온",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 113,
+                "slot": 2,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8, 9],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 60,
+        "growth_reload": 417,
+        "enhance_reload": 45
+    },
+    {
+        "name": "Essex",
+        "name_kr": "에식스",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [7, 8, 9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 333,
+        "enhance_reload": 36,
+        "retrofit": {
+            "id": 107974,
+            "level": 90,
+            "bonus": {
+                "health": 210,
+                "reload": 20,
+                "equipment_proficiency_1": 0.05,
+                "aviation": 80,
+                "equipment_proficiency_2": 0.05,
+                "equipment_proficiency_3": 0.1,
+                "antiair": 35,
+                "accuracy": 10
+            },
+            "skill": 35712,
+            "skin": 107099,
+            "armor": 2
+        }
+    },
+    {
+        "name": "Enterprise",
+        "name_kr": "엔터프라이즈",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 49,
+        "growth_reload": 338,
+        "enhance_reload": 36
+    },
+    {
+        "name": "Yorktown II",
+        "name_kr": "요크타운 II",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.35
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [7, 8, 9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.35
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 50,
+        "growth_reload": 347,
+        "enhance_reload": 37
+    },
+    {
+        "name": "Yumi",
+        "name_kr": "유미",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 43,
+        "growth_reload": 295,
+        "enhance_reload": 32
+    },
+    {
+        "name": "Indomitable",
+        "name_kr": "인도미터블",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 113,
+                "slot": 2,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Illustrious μ",
+        "name_kr": "일러스트리어스(µ장비)",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 113,
+                "slot": 2,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.35
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 43,
+        "growth_reload": 301,
+        "enhance_reload": 32
+    },
+    {
+        "name": "Zuikaku",
+        "name_kr": "즈이카쿠",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Chkalov",
+        "name_kr": "치칼로프",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 119,
+                "slot": 1,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.55
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Katsuragi",
+        "name_kr": "카츠라기",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.15
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.35
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Ticonderoga",
+        "name_kr": "타이콘데로가",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 333,
+        "enhance_reload": 36
+    },
+    {
+        "name": "Theseus",
+        "name_kr": "테세우스",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 115,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10, 15],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 61,
+        "growth_reload": 422,
+        "enhance_reload": 45
+    },
+    {
+        "name": "Peter Strasser",
+        "name_kr": "페터 슈트라서",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 121,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "2": {
+                "default": 123,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 123,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 51,
+        "growth_reload": 356,
+        "enhance_reload": 38
+    },
+    {
+        "name": "Fritz Rumey",
+        "name_kr": "프리츠 루메이",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 121,
+                "slot": 1,
+                "type": [7],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 123,
+                "slot": 2,
+                "type": [7, 8, 9],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "3": {
+                "default": 104,
+                "slot": 3,
+                "type": [2, 6],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 53,
+        "growth_reload": 366,
+        "enhance_reload": 39
+    },
+    {
+        "name": "Hakuryuu",
+        "name_kr": "하쿠류",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7, 8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.25
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 4,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8, 9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 46,
+        "growth_reload": 321,
+        "enhance_reload": 35
+    },
+    {
+        "name": "Hornet II",
+        "name_kr": "호넷 II",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 109,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 111,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 110,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 48,
+        "growth_reload": 333,
+        "enhance_reload": 36
+    },
+    {
+        "name": "Hiryuu META",
+        "name_kr": "히류(META)",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 49,
+        "growth_reload": 387,
+        "enhance_reload": 36
+    },
+    {
+        "name": "Souryuu META",
+        "name_kr": "소류(META)",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.5
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.2
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 49,
+        "growth_reload": 343,
+        "enhance_reload": 37
+    },
+    {
+        "name": "Implacable",
+        "name_kr": "임플래커블",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 113,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 115,
+                "slot": 2,
+                "type": [7, 8, 9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "3": {
+                "default": 114,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.3
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 46,
+        "growth_reload": 322,
+        "enhance_reload": 35
+    },
+    {
+        "name": "August von Parseval",
+        "name_kr": "아우구스트 폰 파르제팔",
+        "rarity": 5,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 44,
+        "growth_reload": 307,
+        "enhance_reload": 33
+    },
+    {
+        "name": "Admiral Nakhimov",
+        "name_kr": "어드미럴 나히모프",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 153,
+                "slot": 1,
+                "type": [7],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "2": {
+                "default": 155,
+                "slot": 2,
+                "type": [7, 8, 9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "3": {
+                "default": 154,
+                "slot": 3,
+                "type": [8],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.4
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 47,
+        "growth_reload": 329,
+        "enhance_reload": 35
+    }
+]

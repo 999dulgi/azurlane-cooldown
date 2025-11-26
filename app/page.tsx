@@ -1,65 +1,166 @@
-import Image from "next/image";
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import {
+    Box,
+    Card,
+    CardContent,
+    Container,
+    FormControl,
+    Grid,
+    InputLabel,
+    MenuItem,
+    Select,
+    Slider,
+    Stack,
+    Typography,
+} from '@mui/material';
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    const [ships, setShips] = useState<ShipData[]>([]);
+    const [equipments, setEquipments] = useState<EquipmentData[]>([]);
+
+    useEffect(() => {
+        const fetchJSON = async () => {
+            try {
+                const responseShip = await fetch('/ships.json');
+                const responseEquip = await fetch('/equipments.json');
+
+                const shipData = await responseShip.json();
+                const equipData = await responseEquip.json();
+
+                setShips(shipData);
+                setEquipments(equipData);
+            } catch (error) {
+                console.error('Error fetching ships:', error);
+            }
+        };
+
+        fetchJSON();
+    }, []);
+
+    return (
+        <Container maxWidth="lg" sx={{ py: 4 }}>
+            <Stack spacing={4} alignItems="center">
+                <Typography variant="h2" component="h1" gutterBottom>
+                    Azurlane Cooldown
+                </Typography>
+                <SelectInfo ships={ships} equipments={equipments} />
+                <SelectInfo ships={ships} equipments={equipments} />
+                <SelectInfo ships={ships} equipments={equipments} />
+            </Stack>
+        </Container>
+    );
+}
+
+function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: EquipmentData[] }) {
+    const [ship, setShip] = useState<ShipData | undefined>(undefined);
+    const [equipment1, setEquipment1] = useState<EquipmentData | undefined>(undefined);
+    const [equipment2, setEquipment2] = useState<EquipmentData | undefined>(undefined);
+    const [equipment3, setEquipment3] = useState<EquipmentData | undefined>(undefined);
+    const [equipment4, setEquipment4] = useState<EquipmentData | undefined>(undefined);
+
+    const renderEquipmentSlot = (
+        label: string,
+        setter: React.Dispatch<React.SetStateAction<EquipmentData | undefined>>,
+        value: EquipmentData | undefined,
+        ship: ShipData | undefined,
+        slotIndex: number
+    ) => {
+        const equipmentData = ship?.equipment[slotIndex];
+        return (
+            <Grid>
+                <Stack spacing={1} alignItems="center">
+                    <FormControl fullWidth>
+                        <InputLabel id={`${label}-label`}>{label}</InputLabel>
+                        <Select
+                            labelId={`${label}-label`}
+                            id={label}
+                            value={value?.name || ''}
+                            label={label}
+                            onChange={(e) => setter(equipments.find((eq) => eq.name === e.target.value))}
+                            disabled={!ship}
+                        >
+                            {equipments
+                                .filter((item) => equipmentData && equipmentData.type.includes(item.type))
+                                .map((item) => (
+                                    <MenuItem key={item.name} value={item.name}>
+                                        {item.name_kr}
+                                    </MenuItem>
+                                ))}
+                        </Select>
+                    </FormControl>
+                    <Box
+                        component="img"
+                        src="https://placehold.co/160x160"
+                        alt="placeholder"
+                        sx={{ width: 160, height: 160, borderRadius: 1, objectFit: 'cover' }}
+                    />
+                </Stack>
+                <Typography variant="body1">{label}</Typography>
+            </Grid>
+        );
+    };
+
+    return (
+        <Card sx={{ width: '100%' }}>
+            <CardContent>
+                <Grid container spacing={2} alignItems="center">
+                    <Grid>
+                        <Stack spacing={1} alignItems="center">
+                            <FormControl fullWidth>
+                                <InputLabel id="ship-label">Ship</InputLabel>
+                                <Select
+                                    labelId="ship-label"
+                                    id="ship"
+                                    value={ship?.name || ''}
+                                    onChange={(e) => setShip(ships.find((s) => s.name === e.target.value))}
+                                >
+                                    {ships.map((item) => (
+                                        <MenuItem key={item.name} value={item.name}>
+                                            {item.name_kr}
+                                        </MenuItem>
+                                    ))}
+                                </Select>
+                            </FormControl>
+                            <Box
+                                component="img"
+                                src="https://placehold.co/160x160"
+                                alt="placeholder"
+                                sx={{ width: 160, height: 160, borderRadius: 1, objectFit: 'cover' }}
+                            />
+                        </Stack>
+                        <Typography variant="body1">Ship</Typography>
+                    </Grid>
+
+                    {renderEquipmentSlot('Equipment 1', setEquipment1, equipment1, ship, 0)}
+                    {renderEquipmentSlot('Equipment 2', setEquipment2, equipment2, ship, 1)}
+                    {renderEquipmentSlot('Equipment 3', setEquipment3, equipment3, ship, 2)}
+                    {renderEquipmentSlot('Equipment 4', setEquipment4, equipment4, ship, 3)}
+                    <Grid>
+                        <Stack spacing={2}>
+                            <FormControl fullWidth>
+                                <Typography gutterBottom>레벨</Typography>
+                                <Slider defaultValue={125} min={1} max={125} />
+                            </FormControl>
+                            <FormControl fullWidth>
+                                <InputLabel id="affinity-label">호감도</InputLabel>
+                                <Select
+                                    variant="standard"
+                                    labelId="affinity-label"
+                                    id="affinity"
+                                    value=""
+                                    label="Affinity"
+                                >
+                                    <MenuItem value="">Select Affinity</MenuItem>
+                                </Select>
+                            </FormControl>
+                            <Typography variant="body1">장비창 공습쿨: </Typography>
+                            <Typography variant="body1">실제 공습쿨: </Typography>
+                        </Stack>
+                    </Grid>
+                </Grid>
+            </CardContent>
+        </Card>
+    );
 }
