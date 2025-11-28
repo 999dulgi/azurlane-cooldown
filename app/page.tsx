@@ -59,6 +59,8 @@ function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: Equi
     const [equipment2, setEquipment2] = useState<EquipmentData | undefined>(undefined);
     const [equipment3, setEquipment3] = useState<EquipmentData | undefined>(undefined);
     const [equipment4, setEquipment4] = useState<EquipmentData | undefined>(undefined);
+    const [affinity, setAffinity] = useState<number>(100);
+    const [level, setLevel] = useState<number>(1);
 
     const renderEquipmentSlot = (
         label: string,
@@ -68,6 +70,21 @@ function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: Equi
         slotIndex: number
     ) => {
         const equipmentData = ship?.equipment[slotIndex];
+        const equipName = { 7: '전투기', 8: '뇌격기', 9: '폭격기', 10: '설비' };
+        let equipmentText = '';
+
+        if (equipmentData && !equipmentData?.type.includes(10)) {
+            const retrofitBonusKey = `equipment_proficiency_${slotIndex}`;
+            const retrofitBonus = ship?.retrofit?.bonus?.[retrofitBonusKey] || 0;
+            const efficiency = equipmentData.efficiency + retrofitBonus;
+            const slotEquipName =
+                equipmentData.type.length > 1
+                    ? equipmentData.type.map((type) => equipName[type].at(0)).join(' ')
+                    : equipName[equipmentData.type[0]];
+            equipmentText = `${slotEquipName} ${efficiency * 100}% x ${equipmentData.mount}`;
+        } else if (equipmentData?.type.includes(10)) {
+            equipmentText = '설비';
+        }
         return (
             <Grid>
                 <Stack spacing={1} alignItems="center">
@@ -97,7 +114,9 @@ function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: Equi
                         sx={{ width: 160, height: 160, borderRadius: 1, objectFit: 'cover' }}
                     />
                 </Stack>
-                <Typography variant="body1">{label}</Typography>
+                <Typography variant="body1" sx={{ textAlign: 'center' }}>
+                    {equipmentText}
+                </Typography>
             </Grid>
         );
     };
@@ -130,18 +149,32 @@ function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: Equi
                                 sx={{ width: 160, height: 160, borderRadius: 1, objectFit: 'cover' }}
                             />
                         </Stack>
-                        <Typography variant="body1">Ship</Typography>
+                        <Typography variant="body1" sx={{ textAlign: 'center' }}>
+                            {ship ? ship.name_kr : ''}
+                        </Typography>
                     </Grid>
 
-                    {renderEquipmentSlot('Equipment 1', setEquipment1, equipment1, ship, 0)}
-                    {renderEquipmentSlot('Equipment 2', setEquipment2, equipment2, ship, 1)}
-                    {renderEquipmentSlot('Equipment 3', setEquipment3, equipment3, ship, 2)}
-                    {renderEquipmentSlot('Equipment 4', setEquipment4, equipment4, ship, 3)}
-                    <Grid>
+                    {renderEquipmentSlot('Equipment 1', setEquipment1, equipment1, ship, 1)}
+                    {renderEquipmentSlot('Equipment 2', setEquipment2, equipment2, ship, 2)}
+                    {renderEquipmentSlot('Equipment 3', setEquipment3, equipment3, ship, 3)}
+                    {renderEquipmentSlot('Equipment 4', setEquipment4, equipment4, ship, 4)}
+                    <Grid size={2}>
                         <Stack spacing={2}>
                             <FormControl fullWidth>
-                                <Typography gutterBottom>레벨</Typography>
-                                <Slider defaultValue={125} min={1} max={125} />
+                                <Typography gutterBottom>레벨 {level}</Typography>
+                                <Slider
+                                    defaultValue={125}
+                                    min={1}
+                                    max={125}
+                                    marks={[
+                                        { value: 1, label: '1' },
+                                        { value: 100, label: '100' },
+                                        { value: 120, label: '120' },
+                                    ]}
+                                    size="small"
+                                    valueLabelDisplay="auto"
+                                    onChange={(e) => setLevel(e.target.value)}
+                                />
                             </FormControl>
                             <FormControl fullWidth>
                                 <InputLabel id="affinity-label">호감도</InputLabel>
@@ -149,10 +182,12 @@ function SelectInfo({ ships, equipments }: { ships: ShipData[]; equipments: Equi
                                     variant="standard"
                                     labelId="affinity-label"
                                     id="affinity"
-                                    value=""
+                                    defaultValue={200}
                                     label="Affinity"
+                                    onChange={(e) => setAffinity(e.target.value)}
                                 >
-                                    <MenuItem value="">Select Affinity</MenuItem>
+                                    <MenuItem value={100}>100</MenuItem>
+                                    <MenuItem value={200}>200</MenuItem>
                                 </Select>
                             </FormControl>
                             <Typography variant="body1">장비창 공습쿨: </Typography>
