@@ -382,72 +382,6 @@
         "enhance_reload": 44
     },
     {
-        "name": "Souryuu",
-        "name_kr": "소류",
-        "rarity": 4,
-        "equipment": {
-            "1": {
-                "default": 117,
-                "slot": 1,
-                "type": [7],
-                "mount": 3,
-                "preload": 0,
-                "efficiency": 1.1
-            },
-            "2": {
-                "default": 119,
-                "slot": 2,
-                "type": [9],
-                "mount": 3,
-                "preload": 0,
-                "efficiency": 1.5
-            },
-            "3": {
-                "default": 118,
-                "slot": 3,
-                "type": [8],
-                "mount": 2,
-                "preload": 0,
-                "efficiency": 1.1
-            },
-            "4": {
-                "default": null,
-                "slot": 4,
-                "type": [10],
-                "mount": 1,
-                "preload": 0,
-                "efficiency": 1
-            },
-            "5": {
-                "default": null,
-                "slot": 5,
-                "type": [10],
-                "mount": 1,
-                "preload": 0,
-                "efficiency": 1
-            }
-        },
-        "base_reload": 45,
-        "growth_reload": 310,
-        "enhance_reload": 33,
-        "retrofit": {
-            "id": 307034,
-            "level": 85,
-            "bonus": {
-                "health": 210,
-                "reload": 20,
-                "equipment_proficiency_1": 0.15,
-                "antiair": 50,
-                "equipment_proficiency_3": 0.05,
-                "aviation": 35,
-                "evasion": 10
-            },
-            "skill": 22612,
-            "skin": 307039,
-            "armor": 2
-        }
-    },
-    {
         "name": "Shinano",
         "name_kr": "시나노",
         "rarity": 6,
@@ -548,7 +482,7 @@
         "enhance_reload": 33
     },
     {
-        "name": "Amagi(CV)",
+        "name": "AmagiCV",
         "name_kr": "아마기(항모)",
         "rarity": 6,
         "equipment": {
