@@ -47,7 +47,8 @@
         },
         "base_reload": 48,
         "growth_reload": 330,
-        "enhance_reload": 35
+        "enhance_reload": 35,
+        "type": 7
     },
     {
         "name": "Taihou",
@@ -97,7 +98,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Ranger",
@@ -163,7 +165,8 @@
             "skill": 7508,
             "skin": 107049,
             "armor": 2
-        }
+        },
+        "type": 6
     },
     {
         "name": "Victorious",
@@ -213,7 +216,8 @@
         },
         "base_reload": 38,
         "growth_reload": 266,
-        "enhance_reload": 29
+        "enhance_reload": 29,
+        "type": 7
     },
     {
         "name": "Saratoga",
@@ -279,7 +283,8 @@
             "skill": 7412,
             "skin": 107039,
             "armor": 2
-        }
+        },
+        "type": 7
     },
     {
         "name": "Shangri-La",
@@ -329,7 +334,8 @@
         },
         "base_reload": 48,
         "growth_reload": 333,
-        "enhance_reload": 36
+        "enhance_reload": 36,
+        "type": 7
     },
     {
         "name": "Centaur",
@@ -379,7 +385,8 @@
         },
         "base_reload": 59,
         "growth_reload": 409,
-        "enhance_reload": 44
+        "enhance_reload": 44,
+        "type": 6
     },
     {
         "name": "Shinano",
@@ -429,7 +436,8 @@
         },
         "base_reload": 46,
         "growth_reload": 322,
-        "enhance_reload": 35
+        "enhance_reload": 35,
+        "type": 7
     },
     {
         "name": "Shoukaku",
@@ -479,7 +487,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "AmagiCV",
@@ -529,7 +538,8 @@
         },
         "base_reload": 49,
         "growth_reload": 344,
-        "enhance_reload": 37
+        "enhance_reload": 37,
+        "type": 7
     },
     {
         "name": "Ark Royal META",
@@ -579,7 +589,8 @@
         },
         "base_reload": 42,
         "growth_reload": 209,
-        "enhance_reload": 32
+        "enhance_reload": 32,
+        "type": 7
     },
     {
         "name": "Ark Royal",
@@ -646,7 +657,8 @@
             "skill": 14412,
             "skin": 207029,
             "armor": 2
-        }
+        },
+        "type": 7
     },
     {
         "name": "Albion",
@@ -696,7 +708,8 @@
         },
         "base_reload": 60,
         "growth_reload": 417,
-        "enhance_reload": 45
+        "enhance_reload": 45,
+        "type": 6
     },
     {
         "name": "Essex",
@@ -763,7 +776,8 @@
             "skill": 35712,
             "skin": 107099,
             "armor": 2
-        }
+        },
+        "type": 7
     },
     {
         "name": "Enterprise",
@@ -813,7 +827,8 @@
         },
         "base_reload": 49,
         "growth_reload": 338,
-        "enhance_reload": 36
+        "enhance_reload": 36,
+        "type": 2
     },
     {
         "name": "Yorktown II",
@@ -863,7 +878,8 @@
         },
         "base_reload": 50,
         "growth_reload": 347,
-        "enhance_reload": 37
+        "enhance_reload": 37,
+        "type": 7
     },
     {
         "name": "Yumi",
@@ -913,7 +929,8 @@
         },
         "base_reload": 43,
         "growth_reload": 295,
-        "enhance_reload": 32
+        "enhance_reload": 32,
+        "type": 7
     },
     {
         "name": "Indomitable",
@@ -963,7 +980,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Illustrious μ",
@@ -1013,7 +1031,8 @@
         },
         "base_reload": 43,
         "growth_reload": 301,
-        "enhance_reload": 32
+        "enhance_reload": 32,
+        "type": 7
     },
     {
         "name": "Zuikaku",
@@ -1063,7 +1082,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Chkalov",
@@ -1113,7 +1133,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Katsuragi",
@@ -1163,7 +1184,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Ticonderoga",
@@ -1213,7 +1235,8 @@
         },
         "base_reload": 48,
         "growth_reload": 333,
-        "enhance_reload": 36
+        "enhance_reload": 36,
+        "type": 7
     },
     {
         "name": "Theseus",
@@ -1263,7 +1286,8 @@
         },
         "base_reload": 61,
         "growth_reload": 422,
-        "enhance_reload": 45
+        "enhance_reload": 45,
+        "type": 6
     },
     {
         "name": "Peter Strasser",
@@ -1313,7 +1337,8 @@
         },
         "base_reload": 51,
         "growth_reload": 356,
-        "enhance_reload": 38
+        "enhance_reload": 38,
+        "type": 7
     },
     {
         "name": "Fritz Rumey",
@@ -1363,7 +1388,8 @@
         },
         "base_reload": 53,
         "growth_reload": 366,
-        "enhance_reload": 39
+        "enhance_reload": 39,
+        "type": 7
     },
     {
         "name": "Hakuryuu",
@@ -1413,7 +1439,8 @@
         },
         "base_reload": 46,
         "growth_reload": 321,
-        "enhance_reload": 35
+        "enhance_reload": 35,
+        "type": 7
     },
     {
         "name": "Hornet II",
@@ -1463,7 +1490,8 @@
         },
         "base_reload": 48,
         "growth_reload": 333,
-        "enhance_reload": 36
+        "enhance_reload": 36,
+        "type": 7
     },
     {
         "name": "Hiryuu META",
@@ -1513,7 +1541,8 @@
         },
         "base_reload": 49,
         "growth_reload": 387,
-        "enhance_reload": 36
+        "enhance_reload": 36,
+        "type": 7
     },
     {
         "name": "Souryuu META",
@@ -1563,7 +1592,8 @@
         },
         "base_reload": 49,
         "growth_reload": 343,
-        "enhance_reload": 37
+        "enhance_reload": 37,
+        "type": 7
     },
     {
         "name": "Implacable",
@@ -1613,7 +1643,8 @@
         },
         "base_reload": 46,
         "growth_reload": 322,
-        "enhance_reload": 35
+        "enhance_reload": 35,
+        "type": 7
     },
     {
         "name": "August von Parseval",
@@ -1663,7 +1694,8 @@
         },
         "base_reload": 44,
         "growth_reload": 307,
-        "enhance_reload": 33
+        "enhance_reload": 33,
+        "type": 7
     },
     {
         "name": "Admiral Nakhimov",
@@ -1713,6 +1745,7 @@
         },
         "base_reload": 47,
         "growth_reload": 329,
-        "enhance_reload": 35
+        "enhance_reload": 35,
+        "type": 7
     }
 ]

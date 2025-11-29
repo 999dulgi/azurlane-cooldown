@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import {
     Box,
     Card,
@@ -16,18 +17,26 @@ import {
     SelectChangeEvent,
     TextField,
     InputAdornment,
-    Button,
+    Tooltip,
     IconButton,
+    Checkbox,
+    FormControlLabel,
 } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
+import InfoIcon from '@mui/icons-material/Info';
 
 export default function Home() {
     const [ships, setShips] = useState<ShipData[]>([]);
     const [equipments, setEquipments] = useState<EquipmentData[]>([]);
     const [CVreload, setCVreload] = useState<number>(42);
     const [CVLreload, setCVLreload] = useState<number>(44);
-    const [BBVreload, setBBVreload] = useState<number>(18);
+    const [commander, setCommander] = useState<boolean>(false);
+    const [commanderReload, setCommanderReload] = useState<number>(0);
+    const [supporter, setSupporter] = useState<boolean>(false);
+    const [result1, setResult1] = useState<number>(0);
+    const [result2, setResult2] = useState<number>(0);
+    const [result3, setResult3] = useState<number>(0);
 
     useEffect(() => {
         const fetchJSON = async () => {
@@ -49,48 +58,149 @@ export default function Home() {
     }, []);
 
     return (
-        <Container sx={{ py: 4 }}>
-            <Stack spacing={2} alignItems="center">
-                <Typography variant="h2" component="h1" gutterBottom>
-                    Azurlane Cooldown
-                </Typography>
-                <SelectInfo slot={1} ships={ships} equipments={equipments} />
-                <SelectInfo slot={2} ships={ships} equipments={equipments} />
-                <SelectInfo slot={3} ships={ships} equipments={equipments} />
-                <Card>
-                    <CardContent>
-                        <TextFieldNumber
-                            id="outlined-basic"
-                            label="항모 장전작"
-                            value={CVreload}
-                            setValue={setCVreload}
-                            min={0}
-                            max={42}
-                        />
-                        <TextFieldNumber
-                            id="outlined-basic"
-                            label="경항모 장전작"
-                            value={CVLreload}
-                            setValue={setCVLreload}
-                            min={0}
-                            max={44}
-                        />
-                        <TextFieldNumber
-                            id="outlined-basic"
-                            label="항전 장전작"
-                            value={BBVreload}
-                            setValue={setBBVreload}
-                            min={0}
-                            max={18}
-                        />
-                    </CardContent>
-                </Card>
-            </Stack>
+        <Container sx={{ py: 4 }} maxWidth="xl">
+            <Typography variant="h2" component="h1" gutterBottom textAlign="center">
+                Azurlane Cooldown
+            </Typography>
+            <Box sx={{ display: 'flex', flexDirection: { xs: 'column', md: 'row' }, gap: 2, justifyContent: 'center' }}>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <SelectInfo
+                        slot={1}
+                        ships={ships}
+                        equipments={equipments}
+                        result={result1}
+                        setResult={setResult1}
+                        CVReload={CVreload}
+                        CVLReload={CVLreload}
+                        commander={commander}
+                        commanderReload={commanderReload}
+                        supporter={supporter}
+                    />
+                    <SelectInfo
+                        slot={2}
+                        ships={ships}
+                        equipments={equipments}
+                        result={result2}
+                        setResult={setResult2}
+                        CVReload={CVreload}
+                        CVLReload={CVLreload}
+                        commander={commander}
+                        commanderReload={commanderReload}
+                        supporter={supporter}
+                    />
+                    <SelectInfo
+                        slot={3}
+                        ships={ships}
+                        equipments={equipments}
+                        result={result3}
+                        setResult={setResult3}
+                        CVReload={CVreload}
+                        CVLReload={CVLreload}
+                        commander={commander}
+                        commanderReload={commanderReload}
+                        supporter={supporter}
+                    />
+                </Box>
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                    <Card>
+                        <CardContent>
+                            <Stack spacing={2} alignItems="center">
+                                <TextFieldNumber
+                                    id="cv-outlined"
+                                    label="항모 장전작"
+                                    value={CVreload}
+                                    setValue={setCVreload}
+                                    min={0}
+                                    max={42}
+                                />
+                                <TextFieldNumber
+                                    id="cvl-outlined"
+                                    label="경항모 장전작"
+                                    value={CVLreload}
+                                    setValue={setCVLreload}
+                                    min={0}
+                                    max={45}
+                                />
+                                <FormControl sx={{ width: 136 }}>
+                                    <InputLabel id="commander-select-label">지휘냥</InputLabel>
+                                    <Select
+                                        labelId="commander-select-label"
+                                        id="commander-select"
+                                        value={commander ? 1 : 0}
+                                        label="지휘냥"
+                                        onChange={(e) => setCommander(e.target.value ? true : false)}
+                                    >
+                                        <MenuItem value={0}>미사용</MenuItem>
+                                        <MenuItem value={1}>사용</MenuItem>
+                                    </Select>
+                                </FormControl>
+                                <TextFieldNumber
+                                    id="commander-outlined"
+                                    label="지휘냥 장전"
+                                    value={commanderReload}
+                                    setValue={setCommanderReload}
+                                    disabled={!commander}
+                                    min={0}
+                                    max={40}
+                                />
+                                <FormControl sx={{ width: 136 }}>
+                                    <InputLabel id="supporter-select-label">하늘의 서포터</InputLabel>
+                                    <Select
+                                        labelId="supporter-select-label"
+                                        id="supporter-select"
+                                        value={supporter ? 1 : 0}
+                                        label="하늘의 서포터"
+                                        onChange={(e) => setSupporter(e.target.value === 1 ? true : false)}
+                                    >
+                                        <MenuItem value={0}>미사용</MenuItem>
+                                        <MenuItem value={1}>사용</MenuItem>
+                                    </Select>
+                                </FormControl>
+                            </Stack>
+                        </CardContent>
+                    </Card>
+                    <Card>
+                        <CardContent>
+                            <Box sx={{ position: 'relative', width: '100%' }}>
+                                <Image
+                                    src="/image/hammann/hammann-.png"
+                                    alt="hammann-"
+                                    width={512}
+                                    height={512}
+                                    style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                                />
+                            </Box>
+                        </CardContent>
+                    </Card>
+                </Box>
+            </Box>
         </Container>
     );
 }
 
-function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData[]; equipments: EquipmentData[] }) {
+function SelectInfo({
+    slot,
+    ships,
+    equipments,
+    result,
+    setResult,
+    CVReload,
+    CVLReload,
+    commander,
+    commanderReload,
+    supporter,
+}: {
+    slot: number;
+    ships: ShipData[];
+    equipments: EquipmentData[];
+    result: number;
+    setResult: React.Dispatch<React.SetStateAction<number>>;
+    CVReload: number;
+    CVLReload: number;
+    commander: boolean;
+    commanderReload: number;
+    supporter: boolean;
+}) {
     const [ship, setShip] = useState<ShipData | undefined>(undefined);
     const [equipment1, setEquipment1] = useState<EquipmentData | undefined>(undefined);
     const [equipment2, setEquipment2] = useState<EquipmentData | undefined>(undefined);
@@ -98,6 +208,69 @@ function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData
     const [equipment4, setEquipment4] = useState<EquipmentData | undefined>(undefined);
     const [affinity, setAffinity] = useState<number>(6);
     const [level, setLevel] = useState<number>(125);
+
+    useEffect(() => {
+        if (!ship || !equipment1 || !equipment2 || !equipment3 || !equipment4) {
+            return;
+        }
+
+        const statReload = Math.floor(
+            (ship.base_reload + (ship.growth_reload * (level - 1)) / 1000 + (ship.enhance_reload || 0)) *
+                (1 + affinity / 100) +
+                (ship.retrofit?.bonus?.reload || 0)
+        );
+
+        let shipReload = statReload + (commander ? commanderReload : 0) + (ship.type === 7 ? CVReload : CVLReload);
+
+        if (ship?.name === 'Implacable') {
+            if (equipment3.type === 9) {
+                shipReload = Math.floor(shipReload * 1.1);
+            }
+        } else if (ship?.name === 'August von Parseval') {
+            if (
+                equipment1.id === 47140 ||
+                equipment1.id === 47160 ||
+                equipment1.id === 47180 ||
+                equipment1.id === 47200 ||
+                equipment3.id === 48040
+            ) {
+                shipReload = Math.floor(shipReload * 1.12);
+            }
+        }
+
+        const calcPlaneCooldown = (equipment: EquipmentData) => {
+            return (equipment?.reload || 1) / 6 / Math.sqrt((shipReload + 100) * Math.PI);
+        };
+
+        const planeCooldown1 = calcPlaneCooldown(equipment1) * ship.equipment[1].mount;
+        const planeCooldown2 = calcPlaneCooldown(equipment2) * ship.equipment[2].mount;
+        const planeCooldown3 = ship.equipment[3].type.includes(2)
+            ? 0
+            : calcPlaneCooldown(equipment3) * ship.equipment[3].mount;
+
+        const totalPlane =
+            ship.equipment[1].mount +
+            ship.equipment[2].mount +
+            (ship.equipment[3].type.includes(2) ? 0 : ship.equipment[3].mount);
+        const totalPlaneCooldown = planeCooldown1 + planeCooldown2 + planeCooldown3;
+
+        const finalCooldown = (totalPlaneCooldown / totalPlane) * 2.2 + 0.033;
+
+        setResult(Number(finalCooldown.toFixed(2)));
+    }, [
+        ship,
+        equipment1,
+        equipment2,
+        equipment3,
+        equipment4,
+        affinity,
+        level,
+        commander,
+        commanderReload,
+        CVReload,
+        CVLReload,
+        setResult,
+    ]);
 
     const handleShipChange = (event: SelectChangeEvent) => {
         const selectedShip = ships.find((ship) => ship.name === event.target.value);
@@ -174,9 +347,9 @@ function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData
                             width: 160,
                             height: 160,
                             borderRadius: 1,
-                            objectFit: 'scale-down',
+                            objectFit: value ? 'scale-down' : 'contain',
                             backgroundSize: 'cover',
-                            backgroundImage: `url(${value ? `/image/rarity/rarity_bg_${value.rarity}.png` : ''})`,
+                            backgroundImage: `url(${value ? `/image/rarity/rarity_bg_${value.rarity}.png` : '/image/rarity/rarity_bg_5.png'})`,
                         }}
                     />
                 </Stack>
@@ -188,7 +361,7 @@ function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData
     };
 
     return (
-        <Card sx={{ width: '100%' }}>
+        <Card>
             <CardContent>
                 <Grid container spacing={2} alignItems="center">
                     <Grid>
@@ -230,7 +403,6 @@ function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData
                             {ship ? ship.name_kr : '\u00A0'}
                         </Typography>
                     </Grid>
-
                     {renderEquipmentSlot('Equipment 1', setEquipment1, equipment1, ship, 1)}
                     {renderEquipmentSlot('Equipment 2', setEquipment2, equipment2, ship, 2)}
                     {renderEquipmentSlot('Equipment 3', setEquipment3, equipment3, ship, 3)}
@@ -267,7 +439,7 @@ function SelectInfo({ slot, ships, equipments }: { slot: number; ships: ShipData
                                     <MenuItem value={12}>200 (12%)</MenuItem>
                                 </Select>
                             </FormControl>
-                            <Typography variant="body1">장비창 공습쿨: </Typography>
+                            <Typography variant="body1">장비창 공습쿨: {result} </Typography>
                             <Typography variant="body1">실제 공습쿨: </Typography>
                         </Stack>
                     </Grid>
@@ -282,6 +454,7 @@ function TextFieldNumber({
     label,
     value,
     setValue,
+    disabled = false,
     min,
     max,
 }: {
@@ -289,6 +462,7 @@ function TextFieldNumber({
     label: string;
     value: number;
     setValue: React.Dispatch<React.SetStateAction<number>>;
+    disabled?: boolean;
     min?: number;
     max?: number;
 }) {
@@ -323,14 +497,21 @@ function TextFieldNumber({
             variant="outlined"
             value={value}
             onChange={(e) => handleChange(e)}
+            disabled={disabled}
             sx={{ width: 136 }}
             InputProps={{
                 endAdornment: (
                     <InputAdornment position="end">
-                        <IconButton onClick={handleDecrement}>
+                        <IconButton
+                            onClick={handleDecrement}
+                            disabled={disabled || (min !== undefined && value <= min)}
+                        >
                             <RemoveIcon />
                         </IconButton>
-                        <IconButton onClick={handleIncrement}>
+                        <IconButton
+                            onClick={handleIncrement}
+                            disabled={disabled || (max !== undefined && value >= max)}
+                        >
                             <AddIcon />
                         </IconButton>
                     </InputAdornment>

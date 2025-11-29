@@ -3,9 +3,9 @@ interface ShipData {
     name_kr: string;
     rarity: number;
     equipment: Record<string, ShipEquipmentData>;
-    base_reload: number | null;
-    growth_reload: number | null;
-    enhance_reload: number | null;
+    base_reload: number;
+    growth_reload: number;
+    enhance_reload: number;
     retrofit?: {
         id: number;
         level: number;
@@ -15,6 +15,7 @@ interface ShipData {
         skin: number;
         armor: number;
     };
+    type: number;
 }
 
 interface ShipEquipmentData {
