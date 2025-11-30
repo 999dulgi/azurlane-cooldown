@@ -16,6 +16,7 @@ interface ShipData {
         armor: number;
     };
     type: number;
+    hasSpecialWeapon?: number;
 }
 
 interface ShipEquipmentData {

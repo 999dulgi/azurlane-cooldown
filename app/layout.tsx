@@ -26,7 +26,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-                <ThemeRegistry options={{ key: 'mui' }}>{children}</ThemeRegistry>
+                <ThemeRegistry>{children}</ThemeRegistry>
             </body>
         </html>
     );
