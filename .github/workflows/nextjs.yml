@@ -31,6 +31,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Change yarn version
+        run: |
+          yarn set version stable
       - name: Detect package manager
         id: detect-package-manager
         run: |
@@ -38,7 +41,6 @@ jobs:
             echo "manager=yarn" >> $GITHUB_OUTPUT
             echo "command=install" >> $GITHUB_OUTPUT
             echo "runner=yarn" >> $GITHUB_OUTPUT
-            yarn set version stable
             exit 0
           elif [ -f "${{ github.workspace }}/package.json" ]; then
             echo "manager=npm" >> $GITHUB_OUTPUT
