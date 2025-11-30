@@ -153,8 +153,8 @@ export default function Home() {
     useEffect(() => {
         const fetchJSON = async () => {
             try {
-                const responseShip = await fetch('/ships.json');
-                const responseEquip = await fetch('/equipments.json');
+                const responseShip = await fetch('ships.json');
+                const responseEquip = await fetch('equipments.json');
 
                 const shipData = await responseShip.json();
                 const equipData = await responseEquip.json();
@@ -361,7 +361,7 @@ export default function Home() {
                             <CardContent>
                                 <Box sx={{ position: 'relative', width: '100%' }}>
                                     <Image
-                                        src={`/image/hammann/hammann${finalResult}.png`}
+                                        src={`image/hammann/hammann${finalResult}.png`}
                                         alt="hammannResult"
                                         width={512}
                                         height={512}
@@ -610,7 +610,7 @@ function SelectInfo({
                 </FormControl>
                 <Box
                     component="img"
-                    src={value ? `/image/equipments/${value.id}.png` : '/image/placeholder/placeholder_equip.png'}
+                    src={value ? `image/equipments/${value.id}.png` : 'image/placeholder/placeholder_equip.png'}
                     alt="placeholder"
                     sx={{
                         width: 160,
@@ -618,7 +618,7 @@ function SelectInfo({
                         borderRadius: 1,
                         objectFit: value ? 'scale-down' : 'contain',
                         backgroundSize: 'cover',
-                        backgroundImage: `url(${value ? `/image/rarity/rarity_bg_${value.rarity}.png` : '/image/rarity/rarity_bg_5.png'})`,
+                        backgroundImage: `url(${value ? `image/rarity/rarity_bg_${value.rarity}.png` : 'image/rarity/rarity_bg_5.png'})`,
                     }}
                 />
                 <Typography variant="body1" sx={{ textAlign: 'center' }}>
@@ -654,8 +654,8 @@ function SelectInfo({
                                 component="img"
                                 src={
                                     shipInfo.ship
-                                        ? `/image/ships/${shipInfo.ship.name}.png`
-                                        : `/image/placeholder/placeholder_ship${slot}.png`
+                                        ? `image/ships/${shipInfo.ship.name}.png`
+                                        : `image/placeholder/placeholder_ship${slot}.png`
                                 }
                                 alt="placeholder"
                                 sx={{
@@ -663,7 +663,7 @@ function SelectInfo({
                                     height: 160,
                                     borderRadius: 1,
                                     backgroundSize: 'cover',
-                                    backgroundImage: `url(${shipInfo.ship ? (shipInfo.ship.retrofit ? `/image/rarity/rarity_bg_${shipInfo.ship.rarity + 1}.png` : `/image/rarity/rarity_bg_${shipInfo.ship.rarity}.png`) : ''})`,
+                                    backgroundImage: `url(${shipInfo.ship ? (shipInfo.ship.retrofit ? `image/rarity/rarity_bg_${shipInfo.ship.rarity + 1}.png` : `image/rarity/rarity_bg_${shipInfo.ship.rarity}.png`) : ''})`,
                                 }}
                             />
                             <Box
