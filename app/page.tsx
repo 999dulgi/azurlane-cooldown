@@ -56,17 +56,20 @@ export default function Home() {
     const [commanderReload, setCommanderReload] = useState<number>(0);
     const [supporter, setSupporter] = useState<boolean>(false);
 
-    const initialShipInfo: ShipInfoType = {
-        ship: undefined,
-        equipment1: undefined,
-        equipment2: undefined,
-        equipment3: undefined,
-        equipment4: undefined,
-        affinity: 6,
-        level: 125,
-        number: 0,
-        isSupportShip: false,
-    };
+    const initialShipInfo: ShipInfoType = useMemo(
+        () => ({
+            ship: undefined,
+            equipment1: undefined,
+            equipment2: undefined,
+            equipment3: undefined,
+            equipment4: undefined,
+            affinity: 6,
+            level: 125,
+            number: 0,
+            isSupportShip: false,
+        }),
+        []
+    );
 
     const [shipInfo1, setShipInfo1] = useState<ShipInfoType>(initialShipInfo);
     const [shipInfo2, setShipInfo2] = useState<ShipInfoType>(initialShipInfo);
@@ -118,6 +121,35 @@ export default function Home() {
         }
     }, [shipInfo1, shipInfo2, shipInfo3]);
 
+    // Save state to localStorage whenever it changes
+    useEffect(() => {
+        // Do not save initial empty state
+        if (ships.length === 0 || equipments.length === 0) return;
+
+        const stateToSave = {
+            shipInfo1,
+            shipInfo2,
+            shipInfo3,
+            CVreload,
+            CVLreload,
+            commander,
+            commanderReload,
+            supporter,
+        };
+        localStorage.setItem('azurlane-cooldown-state', JSON.stringify(stateToSave));
+    }, [
+        shipInfo1,
+        shipInfo2,
+        shipInfo3,
+        CVreload,
+        CVLreload,
+        commander,
+        commanderReload,
+        supporter,
+        ships,
+        equipments,
+    ]);
+
     useEffect(() => {
         const fetchJSON = async () => {
             try {
@@ -129,13 +161,41 @@ export default function Home() {
 
                 setShips(shipData);
                 setEquipments(equipData);
+
+                // Load state from localStorage
+                const savedStateJSON = localStorage.getItem('azurlane-cooldown-state');
+                if (savedStateJSON) {
+                    const savedState = JSON.parse(savedStateJSON);
+
+                    const rehydrateShipInfo = (savedShipInfo: ShipInfoType): ShipInfoType => {
+                        if (!savedShipInfo.ship) return initialShipInfo;
+                        return {
+                            ...savedShipInfo,
+                            ship: shipData.find((s: ShipData) => s.name === savedShipInfo.ship?.name),
+                            equipment1: equipData.find((e: EquipmentData) => e.id === savedShipInfo.equipment1?.id),
+                            equipment2: equipData.find((e: EquipmentData) => e.id === savedShipInfo.equipment2?.id),
+                            equipment3: equipData.find((e: EquipmentData) => e.id === savedShipInfo.equipment3?.id),
+                            equipment4: equipData.find((e: EquipmentData) => e.id === savedShipInfo.equipment4?.id),
+                        };
+                    };
+
+                    setShipInfo1(rehydrateShipInfo(savedState.shipInfo1));
+                    setShipInfo2(rehydrateShipInfo(savedState.shipInfo2));
+                    setShipInfo3(rehydrateShipInfo(savedState.shipInfo3));
+
+                    if (savedState.CVreload) setCVreload(savedState.CVreload);
+                    if (savedState.CVLreload) setCVLreload(savedState.CVLreload);
+                    if (savedState.commander) setCommander(savedState.commander);
+                    if (savedState.commanderReload) setCommanderReload(savedState.commanderReload);
+                    if (savedState.supporter) setSupporter(savedState.supporter);
+                }
             } catch (error) {
                 console.error('Error fetching ships:', error);
             }
         };
 
         fetchJSON();
-    }, []);
+    }, [initialShipInfo]);
 
     return (
         <ThemeRegistry darkMode={darkMode}>
