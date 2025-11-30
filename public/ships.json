@@ -1601,6 +1601,57 @@
         "type": 7
     },
     {
+        "name": "Hakuhou",
+        "name_kr": "하쿠호",
+        "rarity": 6,
+        "equipment": {
+            "1": {
+                "default": 117,
+                "slot": 1,
+                "type": [7, 8, 9],
+                "mount": 2,
+                "preload": 0,
+                "efficiency": 1.1
+            },
+            "2": {
+                "default": 119,
+                "slot": 2,
+                "type": [9],
+                "mount": 3,
+                "preload": 0,
+                "efficiency": 1.15
+            },
+            "3": {
+                "default": 118,
+                "slot": 3,
+                "type": [8],
+                "mount": 5,
+                "preload": 0,
+                "efficiency": 1.55
+            },
+            "4": {
+                "default": null,
+                "slot": 4,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            },
+            "5": {
+                "default": null,
+                "slot": 5,
+                "type": [10],
+                "mount": 1,
+                "preload": 0,
+                "efficiency": 1
+            }
+        },
+        "base_reload": 46,
+        "growth_reload": 322,
+        "enhance_reload": 35,
+        "type": 7
+    },
+    {
         "name": "Implacable",
         "name_kr": "임플래커블",
         "rarity": 6,
