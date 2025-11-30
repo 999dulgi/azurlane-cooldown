@@ -33,7 +33,7 @@ interface EquipmentData {
     rarity: number;
     type: number;
     reload?: number;
-    realod_percent?: number;
+    reload_percent?: number;
     name_kr: string;
     name: string;
 }
