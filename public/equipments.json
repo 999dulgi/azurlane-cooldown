@@ -411,7 +411,7 @@
         "id": 680,
         "rarity": 4,
         "type": 10,
-        "reload_percent": -4,
+        "reload_percent": -0.04,
         "name_kr": "호밍 비컨",
         "name": "Homing Beacon"
     },
@@ -419,7 +419,7 @@
         "id": 3940,
         "rarity": 4,
         "type": 10,
-        "reload_percent": 4,
+        "reload_percent": 0.04,
         "name_kr": "정예 항공 정비 만쥬",
         "name": "Elite Aviation Maintenance Manjuu"
     }
