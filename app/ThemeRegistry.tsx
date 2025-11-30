@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import getTheme from './theme';
 import React from 'react';
 
-export default function ThemeRegistry({ children, darkMode }: { children: React.ReactNode; darkMode: boolean }) {
+export default function ThemeRegistry({ children, darkMode = true }: { children: React.ReactNode; darkMode: boolean }) {
     const theme = getTheme(darkMode);
 
     return (
