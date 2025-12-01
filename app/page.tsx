@@ -478,8 +478,7 @@ function SelectInfo({
             (ship.equipment[3].type.includes(2) ? 0 : ship.equipment[3].mount);
         const totalPlaneCooldown = planeCooldown1 + planeCooldown2 + planeCooldown3;
 
-        const finalCooldown =
-            ((totalPlaneCooldown / totalPlane) * 2.2 + 0.033) * (1 + (equipment4.reload_percent || 0));
+        const finalCooldown = (totalPlaneCooldown / totalPlane) * 2.2 * (1 + (equipment4.reload_percent || 0)) + 0.033;
         return { number: Number(finalCooldown.toFixed(2)), isSupportShip };
     }, [shipInfo, commander, commanderReload, CVReload, CVLReload, supporter]);
 
