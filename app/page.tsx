@@ -420,9 +420,15 @@ function SelectInfo({
     const calculatedResult = useMemo(() => {
         const { ship, equipment1, equipment2, equipment3, equipment4, affinity, level } = shipInfo;
 
-        if (!ship || !equipment1 || !equipment2 || !equipment3 || !equipment4) {
+        if (!ship || !equipment1 || !equipment2 || !equipment4) {
             return { number: 0, isSupportShip: false };
         }
+
+        ship?.equipment[3].type.map((type) => {
+            if ((type === 7 || type === 8 || type === 9) && !equipment3) {
+                return { number: 0, isSupportShip: false };
+            }
+        });
 
         const statReload = Math.floor(
             (ship.base_reload + (ship.growth_reload * (level - 1)) / 1000 + (ship.enhance_reload || 0)) *
@@ -434,7 +440,7 @@ function SelectInfo({
         let isSupportShip = false;
 
         if (ship?.name === 'Implacable') {
-            if (equipment3.type === 9) {
+            if (equipment3?.type === 9) {
                 shipReload = shipReload * (1.1 + (supporter ? 0.04 : 0));
             }
             isSupportShip = true;
@@ -444,7 +450,7 @@ function SelectInfo({
                 equipment1.id === 47160 ||
                 equipment1.id === 47180 ||
                 equipment1.id === 47200 ||
-                equipment3.id === 48040
+                equipment3?.id === 48040
             ) {
                 shipReload = shipReload * (1.12 + (supporter ? 0.04 : 0));
             }
@@ -468,14 +474,10 @@ function SelectInfo({
 
         const planeCooldown1 = calcPlaneCooldown(equipment1) * ship.equipment[1].mount;
         const planeCooldown2 = calcPlaneCooldown(equipment2) * ship.equipment[2].mount;
-        const planeCooldown3 = ship.equipment[3].type.includes(2)
-            ? 0
-            : calcPlaneCooldown(equipment3) * ship.equipment[3].mount;
+        const planeCooldown3 = equipment3 ? calcPlaneCooldown(equipment3) * ship.equipment[3].mount : 0;
 
         const totalPlane =
-            ship.equipment[1].mount +
-            ship.equipment[2].mount +
-            (ship.equipment[3].type.includes(2) ? 0 : ship.equipment[3].mount);
+            ship.equipment[1].mount + ship.equipment[2].mount + (equipment3 ? ship.equipment[3].mount : 0);
         const totalPlaneCooldown = planeCooldown1 + planeCooldown2 + planeCooldown3;
 
         const finalCooldown = (totalPlaneCooldown / totalPlane) * 2.2 * (1 + (equipment4.reload_percent || 0)) + 0.033;
