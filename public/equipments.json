@@ -400,6 +400,14 @@
         "name": "Fulmar"
     },
     {
+        "id": 17280,
+        "rarity": 5,
+        "type": 9,
+        "reload": 1474,
+        "name_kr": "F4U(VBF-94 중대)",
+        "name": "F4U(VBF-94 Squadron)"
+    },
+    {
         "id": 1440,
         "rarity": 5,
         "type": 10,

@@ -1,8 +1,8 @@
 import type { NextConfig } from 'next';
 
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig: NextConfig = {
-    basePath: '/azurlane-cooldown',
-    output: 'export',
     /* config options here */
     images: {
         remotePatterns: [
@@ -11,6 +11,8 @@ const nextConfig: NextConfig = {
         ],
         unoptimized: true,
     },
+    basePath: isProd ? '/azurlane-cooldown' : undefined,
+    output: isProd ? 'export' : undefined,
 };
 
 export default nextConfig;

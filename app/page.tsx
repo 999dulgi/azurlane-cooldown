@@ -121,9 +121,7 @@ export default function Home() {
         }
     }, [shipInfo1, shipInfo2, shipInfo3]);
 
-    // Save state to localStorage whenever it changes
     useEffect(() => {
-        // Do not save initial empty state
         if (ships.length === 0 || equipments.length === 0) return;
 
         const stateToSave = {
@@ -244,6 +242,14 @@ export default function Home() {
                                 있습니다. 이 코드는 인게임 도크의 &apos;장비 코드&apos; 기능을 통해 붙여넣어 사용할 수
                                 있습니다.
                             </Typography>
+                            <Typography variant="h6" color="primary" sx={{ mt: 3, fontWeight: 'bold' }}>
+                                가져오기
+                            </Typography>
+                            <Typography color="text.secondary">
+                                &apos;가져오기&apos; 버튼을 통해 게임 내 함선에 장착된 장비 구성을 코드로 복사할 수
+                                있습니다. 이 코드는 인게임 도크의 &apos;장비 코드&apos; 기능에 코드 출력을 눌러 복사한
+                                뒤 붙여넣으면 사용할 수 있습니다.
+                            </Typography>
                         </Stack>
                     </DialogContent>
                     <DialogActions>
@@ -270,6 +276,7 @@ export default function Home() {
                             commander={commander}
                             commanderReload={commanderReload}
                             supporter={supporter}
+                            otherSelectedShips={[shipInfo2.ship, shipInfo3.ship]}
                         />
                         <SelectInfo
                             slot={2}
@@ -282,6 +289,7 @@ export default function Home() {
                             commander={commander}
                             commanderReload={commanderReload}
                             supporter={supporter}
+                            otherSelectedShips={[shipInfo1.ship, shipInfo3.ship]}
                         />
                         <SelectInfo
                             slot={3}
@@ -294,6 +302,7 @@ export default function Home() {
                             commander={commander}
                             commanderReload={commanderReload}
                             supporter={supporter}
+                            otherSelectedShips={[shipInfo1.ship, shipInfo2.ship]}
                         />
                     </Box>
                     <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
@@ -401,6 +410,7 @@ function SelectInfo({
     commander,
     commanderReload,
     supporter,
+    otherSelectedShips,
 }: {
     slot: number;
     ships: ShipData[];
@@ -412,10 +422,15 @@ function SelectInfo({
     commander: boolean;
     commanderReload: number;
     supporter: boolean;
+    otherSelectedShips: (ShipData | undefined)[];
 }) {
-    const [dialogOpen, setDialogOpen] = useState(false);
+    const [exportDialogOpen, setExportDialogOpen] = useState(false);
+    const [importDialogOpen, setImportDialogOpen] = useState(false);
     const [exportLevel, setExportLevel] = useState<number>(13);
     const [snackbarOpen, setSnackbarOpen] = useState(false);
+    const [snackbarMessage, setSnackbarMessage] = useState('');
+    const [snackbarSeverity, setSnackbarSeverity] = useState<'success' | 'error' | 'info' | 'warning'>('success');
+    const [importCode, setImportCode] = useState('');
 
     const calculatedResult = useMemo(() => {
         const { ship, equipment1, equipment2, equipment3, equipment4, affinity, level } = shipInfo;
@@ -424,11 +439,10 @@ function SelectInfo({
             return { number: 0, isSupportShip: false };
         }
 
-        ship?.equipment[3].type.map((type) => {
-            if ((type === 7 || type === 8 || type === 9) && !equipment3) {
-                return { number: 0, isSupportShip: false };
-            }
-        });
+        const equipment3AllowedTypes = ship.equipment[3]?.type || [];
+        if (equipment3AllowedTypes.some((type) => [7, 8, 9].includes(type)) && !equipment3) {
+            return { number: 0, isSupportShip: false };
+        }
 
         const statReload = Math.floor(
             (ship.base_reload + (ship.growth_reload * (level - 1)) / 1000 + (ship.enhance_reload || 0)) *
@@ -502,6 +516,103 @@ function SelectInfo({
         }));
     };
 
+    const handleImport = () => {
+        if (!importCode) return;
+
+        try {
+            const text = importCode;
+            const decodedText = Buffer.from(text, 'base64').toString('utf8').toLowerCase().split('\\')[0];
+            const ids = decodedText.split('/').map((id) => parseInt(id || '0', 32));
+
+            const findEquipmentById = (targetId: number) => {
+                if (targetId === 0) return { equipment: undefined, found: true };
+                const equipment = equipments.find((eq) => {
+                    for (let level = 13; level >= 0; level--) {
+                        const exportedId = eq.id + (eq.rarity <= 4 ? Math.min(level, 11) : level);
+                        if (exportedId === targetId) {
+                            return true;
+                        }
+                    }
+                    return false;
+                });
+                return { equipment, found: !!equipment };
+            };
+
+            const results = ids.slice(0, 5).map(findEquipmentById);
+
+            const notFound = results.some((r, index) => {
+                if (shipInfo.ship?.name === 'Fritz Rumey' && index === 2) {
+                    return false;
+                }
+                return !r.found;
+            });
+
+            if (notFound) {
+                setSnackbarMessage('장비를 찾을 수 없습니다.');
+                setSnackbarSeverity('error');
+                setSnackbarOpen(true);
+                return;
+            }
+
+            const incompatible = shipInfo.ship
+                ? results.some((r, index) => {
+                      const slotIndex = index + 1;
+                      const equipment = r.equipment;
+
+                      if (shipInfo.ship?.name === 'Fritz Rumey' && slotIndex === 3) {
+                          return false;
+                      }
+
+                      if (equipment) {
+                          const shipSlotInfo = shipInfo.ship!.equipment[slotIndex];
+                          if (shipSlotInfo && !shipSlotInfo.type.includes(equipment.type)) {
+                              return true; // Incompatible equipment type
+                          }
+                      }
+                      return false;
+                  })
+                : false;
+
+            if (incompatible) {
+                setSnackbarMessage('호환되지 않는 장비가 포함되어 있습니다.');
+                setSnackbarSeverity('error');
+                setSnackbarOpen(true);
+                return;
+            }
+
+            const [eq1, eq2, eq3, eq4, eq5] = results.map((r) => r.equipment);
+
+            let finalEq4 = eq4;
+            const homingBeaconId = 680;
+            const manjuuControlId = 3940;
+
+            if (eq4?.id === homingBeaconId || eq4?.id === manjuuControlId) {
+                finalEq4 = eq4;
+            } else if (eq5?.id === homingBeaconId || eq5?.id === manjuuControlId) {
+                finalEq4 = eq5;
+            }
+
+            setShipInfo((prev) => ({
+                ...prev,
+                equipment1: eq1,
+                equipment2: eq2,
+                equipment3: eq3,
+                equipment4: finalEq4,
+            }));
+
+            setImportDialogOpen(false);
+            setSnackbarMessage('장비를 성공적으로 가져왔습니다.');
+            setSnackbarSeverity('success');
+            setSnackbarOpen(true);
+        } catch (error) {
+            console.error('Failed to process import code: ', error);
+            setSnackbarMessage('장비를 가져오는데 실패했습니다.');
+            setSnackbarSeverity('error');
+            setSnackbarOpen(true);
+            return;
+        }
+    };
+
     const handleExportButtonClick = () => {
         const equipmentText = (equipment: EquipmentData) => {
             if (equipment.rarity <= 4) {
@@ -536,8 +647,10 @@ function SelectInfo({
         text += (1440 + exportLevel).toString(32) + '\\0';
 
         navigator.clipboard.writeText(btoa(text.toUpperCase())).then(() => {
+            setSnackbarMessage('클립보드에 복사되었습니다.');
+            setSnackbarSeverity('success');
             setSnackbarOpen(true);
-            setDialogOpen(false);
+            setExportDialogOpen(false);
         });
     };
 
@@ -645,11 +758,18 @@ function SelectInfo({
                                     onChange={(e) => handleShipChange(e)}
                                     sx={{ width: 160 }}
                                 >
-                                    {ships.map((item) => (
-                                        <MenuItem key={item.name} value={item.name}>
-                                            {item.name_kr}
-                                        </MenuItem>
-                                    ))}
+                                    {ships
+                                        .filter(
+                                            (ship) =>
+                                                !otherSelectedShips.some(
+                                                    (selectedShip) => selectedShip && selectedShip.name === ship.name
+                                                )
+                                        )
+                                        .map((item) => (
+                                            <MenuItem key={item.name} value={item.name}>
+                                                {item.name_kr}
+                                            </MenuItem>
+                                        ))}
                                 </Select>
                             </FormControl>
                             <Box
@@ -766,14 +886,19 @@ function SelectInfo({
                                     {shipInfo.number}
                                 </Typography>
                             </Stack>
-                            <Button variant="contained" onClick={() => setDialogOpen(true)}>
-                                내보내기
-                            </Button>
+                            <Box sx={{ display: 'flex', justifyContent: 'center', gap: 1 }}>
+                                <Button variant="contained" size="small" onClick={() => setExportDialogOpen(true)}>
+                                    내보내기
+                                </Button>
+                                <Button variant="contained" size="small" onClick={() => setImportDialogOpen(true)}>
+                                    가져오기
+                                </Button>
+                            </Box>
                         </Stack>
                     </Stack>
                 </CardContent>
             </Card>
-            <Dialog open={dialogOpen} onClose={() => setDialogOpen(false)}>
+            <Dialog open={exportDialogOpen} onClose={() => setExportDialogOpen(false)}>
                 <DialogTitle>내보내기</DialogTitle>
                 <DialogContent>
                     <Stack spacing={2} sx={{ pt: 1 }}>
@@ -788,9 +913,32 @@ function SelectInfo({
                     </Stack>
                 </DialogContent>
                 <DialogActions>
-                    <Button onClick={() => setDialogOpen(false)}>취소</Button>
+                    <Button onClick={() => setExportDialogOpen(false)}>취소</Button>
                     <Button onClick={handleExportButtonClick} variant="contained">
                         내보내기
+                    </Button>
+                </DialogActions>
+            </Dialog>
+            <Dialog open={importDialogOpen} onClose={() => setImportDialogOpen(false)}>
+                <DialogTitle>가져오기</DialogTitle>
+                <DialogContent>
+                    <TextField
+                        autoFocus
+                        margin="dense"
+                        id="import-code"
+                        label="장비 코드"
+                        type="text"
+                        fullWidth
+                        variant="standard"
+                        value={importCode}
+                        onChange={(e) => setImportCode(e.target.value)}
+                        placeholder="여기에 코드를 붙여넣으세요"
+                    />
+                </DialogContent>
+                <DialogActions>
+                    <Button onClick={() => setImportDialogOpen(false)}>취소</Button>
+                    <Button onClick={handleImport} variant="contained">
+                        가져오기
                     </Button>
                 </DialogActions>
             </Dialog>
@@ -800,8 +948,8 @@ function SelectInfo({
                 onClose={() => setSnackbarOpen(false)}
                 anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
             >
-                <Alert onClose={() => setSnackbarOpen(false)} severity="success" sx={{ width: '100%' }}>
-                    클립보드에 복사되었습니다.
+                <Alert onClose={() => setSnackbarOpen(false)} severity={snackbarSeverity} sx={{ width: '100%' }}>
+                    {snackbarMessage}
                 </Alert>
             </Snackbar>
         </>
