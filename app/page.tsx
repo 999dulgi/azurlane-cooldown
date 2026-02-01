@@ -79,8 +79,8 @@ export default function Home() {
     const [darkMode, setDarkMode] = useState(true);
 
     const reset = () => {
-        setCVreload(42);
-        setCVLreload(45);
+        setCVreload(44);
+        setCVLreload(47);
         setCommander(false);
         setCommanderReload(0);
         setSupporter(false);
@@ -315,7 +315,7 @@ export default function Home() {
                                         value={CVreload}
                                         setValue={setCVreload}
                                         min={0}
-                                        max={42}
+                                        max={44}
                                     />
                                     <TextFieldNumber
                                         id="cvl-outlined"
@@ -323,7 +323,7 @@ export default function Home() {
                                         value={CVLreload}
                                         setValue={setCVLreload}
                                         min={0}
-                                        max={45}
+                                        max={47}
                                     />
                                     <FormControl sx={{ width: 136 }}>
                                         <InputLabel id="commander-select-label">지휘냥</InputLabel>
@@ -494,7 +494,7 @@ function SelectInfo({
             ship.equipment[1].mount + ship.equipment[2].mount + (equipment3 ? ship.equipment[3].mount : 0);
         const totalPlaneCooldown = planeCooldown1 + planeCooldown2 + planeCooldown3;
 
-        const finalCooldown = (totalPlaneCooldown / totalPlane) * 2.2 * (1 + (equipment4.reload_percent || 0)) + 0.033;
+        const finalCooldown = (totalPlaneCooldown / totalPlane) * 2.2 * (1 + (equipment4.reload_percent || 0));
         return { number: Number(finalCooldown.toFixed(2)), isSupportShip };
     }, [shipInfo, commander, commanderReload, CVReload, CVLReload, supporter]);
 
